@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+  <moduleName>SkyrimNet Swirling Malice</moduleName>
+  <installSteps order="Explicit">
+    <installStep name="Language">
+      <optionalFileGroups order="Explicit">
+        <group name="Language" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="English">
+              <description>English plugin. English MCM text for every game language, including Japanese.</description>
+              <conditionFlags>
+                <flag name="Language">EN</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Recommended"/>
+              </typeDescriptor>
+            </plugin>
+            <plugin name="日本語 (Japanese)">
+              <description>Japanese plugin and Japanese MCM. The other nine game languages use English MCM text.</description>
+              <conditionFlags>
+                <flag name="Language">JA</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional"/>
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+  </installSteps>
+  <conditionalFileInstalls>
+    <patterns>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Language" value="EN"/>
+        </dependencies>
+        <files>
+          <folder source="English" destination="" priority="0"/>
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Language" value="JA"/>
+        </dependencies>
+        <files>
+          <folder source="Japanese" destination="" priority="0"/>
+        </files>
+      </pattern>
+    </patterns>
+  </conditionalFileInstalls>
+</config>

@@ -1,0 +1,139 @@
+{
+	"modName": "skyrimnet_SwirlingMalice",
+	"displayName": "$SSM_ModName",
+	"minMcmVersion": 9,
+	"cursorFillMode": "topToBottom",
+	"content": [
+		{
+			"type": "header",
+			"text": "$SSM_HeaderGeneral"
+		},
+		{
+			"id": "bEnabled:General",
+			"type": "toggle",
+			"text": "$SSM_Enabled",
+			"help": "$SSM_EnabledHelp",
+			"valueOptions": {
+				"sourceType": "ModSettingBool"
+			}
+		},
+		{
+			"id": "iLog:General",
+			"type": "enum",
+			"text": "$SSM_Log",
+			"help": "$SSM_LogHelp",
+			"valueOptions": {
+				"sourceType": "ModSettingInt",
+				"options": [
+					"$SSM_LogOn",
+					"$SSM_LogOff"
+				]
+			}
+		},
+		{
+			"id": "iFramework:General",
+			"type": "enum",
+			"text": "$SSM_Framework",
+			"help": "$SSM_FrameworkHelp",
+			"valueOptions": {
+				"sourceType": "ModSettingInt",
+				"options": [
+					"$SSM_OStim",
+					"$SSM_SexLab"
+				]
+			}
+		},
+		{
+			"id": "iInterval:General",
+			"type": "slider",
+			"text": "$SSM_Interval",
+			"help": "$SSM_IntervalHelp",
+			"valueOptions": {
+				"min": 0,
+				"max": 240,
+				"step": 5,
+				"formatString": "{0}",
+				"sourceType": "ModSettingInt"
+			}
+		},
+		{
+			"type": "header",
+			"text": "$SSM_HeaderMalice"
+		},
+		{
+			"id": "bMalice:General",
+			"type": "toggle",
+			"text": "$SSM_Malice",
+			"help": "$SSM_MaliceHelp",
+			"valueOptions": {
+				"sourceType": "ModSettingBool"
+			}
+		},
+		{
+			"id": "iMaliceInterval:General",
+			"type": "slider",
+			"text": "$SSM_MaliceInterval",
+			"help": "$SSM_MaliceIntervalHelp",
+			"valueOptions": {
+				"min": 0,
+				"max": 600,
+				"step": 5,
+				"formatString": "{0}",
+				"sourceType": "ModSettingInt"
+			}
+		},
+		{
+			"id": "iMarchSeconds:General",
+			"type": "slider",
+			"text": "$SSM_MarchSeconds",
+			"help": "$SSM_MarchSecondsHelp",
+			"valueOptions": {
+				"min": 10,
+				"max": 600,
+				"step": 10,
+				"formatString": "{0}",
+				"sourceType": "ModSettingInt"
+			}
+		},
+		{
+			"type": "header",
+			"text": "$SSM_HeaderList"
+		},
+		{
+			"id": "sRoster:General",
+			"type": "text",
+			"text": "$SSM_Roster",
+			"help": "$SSM_RosterHelp",
+			"valueOptions": {
+				"sourceType": "ModSettingString"
+			}
+		},
+		{
+			"type": "text",
+			"text": "$SSM_Add",
+			"help": "$SSM_AddHelp",
+			"action": {
+				"type": "CallFunction",
+				"function": "AddCrosshair"
+			}
+		},
+		{
+			"type": "text",
+			"text": "$SSM_Remove",
+			"help": "$SSM_RemoveHelp",
+			"action": {
+				"type": "CallFunction",
+				"function": "RemoveCrosshair"
+			}
+		},
+		{
+			"type": "text",
+			"text": "$SSM_ShowSlaves",
+			"help": "$SSM_ShowSlavesHelp",
+			"action": {
+				"type": "CallFunction",
+				"function": "ShowSlaves"
+			}
+		}
+	]
+}
