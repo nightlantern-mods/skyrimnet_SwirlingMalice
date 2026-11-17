@@ -1,5 +1,29 @@
 # SkyrimNet Swirling Malice
 
+フォロワーの一人にクロスヘアを合わせ、MCM の「見ているフォロワーを登録」を押して、支配者として登録する。ジャーナルに、その人の名前のクエストが付く。
+
+二人きりになると、支配者はプレイヤーを自分のものにすると告げ、シーンが始まる。終わると、もう一人をだまして連れてくるよう命じる。
+
+室内に大人を一人連れてくると、支配者はその人を自分のものだと宣言し、シーンの開始と同時に記録する。一人の支配者につき10人まで。支配者は5人まで。
+
+牢屋のある都市では、濡れ衣を着せる相手と会話して、大人一人に盗みの濡れ衣を着せる。同じ場所の衛兵が逮捕し、牢屋へ連れていく。衛兵がいなければ、そこにいる別の大人が連れていく。牢屋ではシーンが再生され、24時間で釈放される。
+
+セリフは SkyrimNet が話します。シーンは初期設定では OStim、MCM で SexLab にも切り替えられます。
+
+https://github.com/nightlantern-mods/skyrimnet_SwirlingMalice
+
+Aim the crosshair at one follower, then press "Register the follower you are looking at" in the MCM to make them a dominant. A journal quest in their name is added.
+
+Be alone with them. They claim you, and a scene starts. After it, they order you to deceive someone else and bring that person to them.
+
+Bring one adult indoors. The dominant declares that person theirs, and the person is recorded when the scene starts. Ten people per dominant, five dominants.
+
+In a city with a jail, talk to one adult and frame them for theft. A guard in the same place arrests them and takes them to jail. If no guard is there, another adult nearby takes them. A scene plays in the jail, and they are released after 24 hours.
+
+SkyrimNet speaks the lines. Scenes use OStim by default, or SexLab from the MCM.
+
+https://github.com/nightlantern-mods/skyrimnet_SwirlingMalice
+
 Version 0.1.0. First public release.
 
 Repository: https://github.com/nightlantern-mods/skyrimnet_SwirlingMalice
@@ -20,7 +44,7 @@ The plugin is light (the ESL flag is set) and its only master is Skyrim.esm. It 
 | [OStim Standalone](https://www.nexusmods.com/skyrimspecialedition/mods/98163) (`OStim.esp`) or SexLab (`SexLab.esm`) | The MCM chooses one. The default is OStim. If the one you pick is missing, the scene does not start. See the note under this table. |
 | [SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604) | The MCM page. |
 | [MCM Helper](https://www.nexusmods.com/skyrimspecialedition/mods/53000) | `SSM_Main` extends `MCM_ConfigBase`. `config.json` sets `minMcmVersion` to 9. |
-| [PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048) | `MiscUtil.ScanCellNPCs` and `StorageUtil` FormLists. The slave record is kept in that FormList, not in a file. |
+| [PapyrusUtil SE](https://www.nexusmods.com/skyrimspecialedition/mods/13048) | `MiscUtil.ScanCellNPCs` and `StorageUtil` FormLists. The slave record is kept in that FormList and is saved with the game save (the SKSE co-save), not in a settings file. |
 
 `SSM_Scene` names script types from both OStim (`OThreadBuilder`, `OFurniture`, `OThread`, `OActor`) and SexLab (`SexLabFramework`, `SexLabUtil`, `SexLabThread`) in the same file. Before it branches, it calls `OFurniture.FindFurniture`. Papyrus loads a script only when every type that script names is present. The project files do not record which SexLab version supplies `StartScene`, `GetThread`, and `GetStatus`. No address for SexLab is given here, because this project does not record one.
 
